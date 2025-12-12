@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pelaporan Bencana</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>Aplikasi Pelaporan Bencana</h1>
+    </header>
+
+    <main class="container">
+        <section id="report-form">
+            <h2>Laporkan Bencana</h2>
+            <form id="disasterForm">
+                <label for="disasterType">Jenis Bencana:</label>
+                <select id="disasterType" name="disasterType" required>
+                    <option value="">-- Pilih Jenis Bencana --</option>
+                    <option value="Banjir">Banjir</option>
+                    <option value="Gempa">Gempa Bumi</option>
+                    <option value="Kebakaran">Kebakaran</option>
+                    <option value="Longsor">Tanah Longsor</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+
+                <label for="location">Lokasi (Koordinat atau Deskripsi):</label>
+                <input type="text" id="location" name="location" placeholder="Masukkan lokasi atau klik peta" required>
+                <button type="button" id="getLocButton">Gunakan Lokasi Saat Ini</button>
+                
+                <label for="description">Deskripsi Kejadian:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <label for="reporterName">Nama Pelapor (Opsional):</label>
+                <input type="text" id="reporterName" name="reporterName">
+
+                <button type="submit">Kirim Laporan</button>
+            </form>
+        </section>
+
+        <section id="map-section">
+            <h2>Peta Bencana</h2>
+            <div id="map"></div>
+        </section>
+
+        <section id="report-list">
+            <h2>Laporan Terbaru</h2>
+            <ul id="reportsContainer">
+                </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sistem Pelaporan Bencana</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
